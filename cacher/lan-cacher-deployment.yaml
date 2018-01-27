@@ -1,0 +1,48 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  annotations:
+    kompose.cmd: kompose convert -f docker-compose.yml
+    kompose.version: 1.7.0 (767ab4b)
+  creationTimestamp: null
+  labels:
+    io.kompose.service: lan-cacher
+  name: lan-cacher
+spec:
+  replicas: 1
+  strategy:
+    type: Recreate
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        io.kompose.service: lan-cacher
+    spec:
+      containers:
+      - image: data_lan-cacher
+        name: lan-cacher
+        imagePullPolicy: Never
+        ports:
+        - containerPort: 80
+        resources: {}
+        volumeMounts:
+        - mountPath: /etc/nginx/nginx.conf
+          name: nfs-cacher-data
+          subPath: nginx.conf
+        - mountPath: /etc/nginx/conf.d
+          name: nfs-cacher-data
+          subPath: conf.d
+        - mountPath: /var/log/nginx
+          name: nfs-cacher-data
+          subPath: logs
+        - mountPath: /cache
+          name: nfs-cacher-archives
+      restartPolicy: Always
+      volumes:
+      - name: nfs-cacher-data
+        persistentVolumeClaim:
+          claimName: nfs-cacher-data
+      - name: nfs-cacher-archives
+        persistentVolumeClaim:
+          claimName: nfs-cacher-archives
+status: {}

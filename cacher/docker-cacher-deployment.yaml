@@ -1,0 +1,42 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  annotations:
+    kompose.cmd: kompose convert -f docker-compose.yml
+    kompose.version: 1.7.0 (767ab4b)
+  creationTimestamp: null
+  labels:
+    io.kompose.service: docker-cacher
+  name: docker-cacher
+spec:
+  replicas: 1
+  strategy:
+    type: Recreate
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        io.kompose.service: docker-cacher
+    spec:
+      containers:
+      - image: registry:2
+        name: docker-cacher
+        ports:
+        - containerPort: 5000
+        resources: {}
+        volumeMounts:
+        - mountPath: /etc/docker/registry/
+          name: nfs-data
+          subPath: docker-cacher
+        - mountPath: /var/lib/registry
+          name: nfs-cacher-archives
+          subPath: docker
+      restartPolicy: Always
+      volumes:
+      - name: nfs-data
+        persistentVolumeClaim:
+          claimName: nfs-data
+      - name: nfs-cacher-archives
+        persistentVolumeClaim:
+          claimName: nfs-cacher-archives
+status: {}

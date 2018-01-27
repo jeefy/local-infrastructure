@@ -1,0 +1,118 @@
+apiVersion: v1
+data:
+  01-pihole.conf: |
+    # Pi-hole: A black hole for Internet advertisements
+    # (c) 2015, 2016 by Jacob Salmela
+    # Network-wide ad blocking via your Raspberry Pi
+    # http://pi-hole.net
+    # dnsmasq config for Pi-hole
+    #
+    # Pi-hole is free software: you can redistribute it and/or modify
+    # it under the terms of the GNU General Public License as published by
+    # the Free Software Foundation, either version 2 of the License, or
+    # (at your option) any later version.
+
+    ###############################################################################
+    #      FILE AUTOMATICALLY POPULATED BY PI-HOLE INSTALL/UPDATE PROCEDURE.      #
+    # ANY CHANGES MADE TO THIS FILE AFTER INSTALL WILL BE LOST ON THE NEXT UPDATE #
+    #                                                                             #
+    #        IF YOU WISH TO CHANGE THE UPSTREAM SERVERS, CHANGE THEM IN:          #
+    #                      /etc/pihole/setupVars.conf                             #
+    #                                                                             #
+    #        ANY OTHER CHANGES SHOULD BE MADE IN A SEPERATE CONFIG FILE           #
+    #                        OR IN /etc/dnsmasq.conf                              #
+    ###############################################################################
+
+    addn-hosts=/etc/pihole/gravity.list
+    addn-hosts=/etc/pihole/local.list
+    addn-hosts=/etc/pihole/black.list
+
+
+    localise-queries
+
+
+    no-resolv
+
+
+
+    cache-size=10000
+
+    log-queries
+    log-facility=/var/log/pihole.log
+
+    local-ttl=300
+
+    log-async
+    server=8.8.8.8
+    server=8.8.4.4
+    interface=eth0
+  02-gridania.conf: |
+    address=/content1.steampowered.com/192.168.2.7
+    address=/content2.steampowered.com/192.168.2.7
+    address=/content3.steampowered.com/192.168.2.7
+    address=/content4.steampowered.com/192.168.2.7
+    address=/content5.steampowered.com/192.168.2.7
+    address=/content6.steampowered.com/192.168.2.7
+    address=/content7.steampowered.com/192.168.2.7
+    address=/content8.steampowered.com/192.168.2.7
+    address=/content9.steampowered.com/192.168.2.7
+    address=/content0.steampowered.com/192.168.2.7
+    address=/cs.steampowered.com/192.168.2.7
+    address=/steamcontent.com/192.168.2.7
+    address=/client-download.steampowered.com/192.168.2.7
+    address=/.hsar.steampowered.com.edgesuite.net/192.168.2.7
+    address=/.akamai.steamstatic.com/192.168.2.7
+    address=/content-origin.steampowered.com/192.168.2.7
+
+
+
+    address=/dist.blizzard.com.edgesuite.net/192.168.2.7
+    address=/llnw.blizzard.com/192.168.2.7
+    address=/dist.blizzard.com/192.168.2.7
+    address=/blizzard.vo.llnwd.net/192.168.2.7
+    address=/blzddist1-a.akamaihd.net/192.168.2.7
+    address=/blzddist2-a.akamaihd.net/192.168.2.7
+    address=/blzddist3-a.akamaihd.net/192.168.2.7
+    address=/blzddist1-a.akamaihd.net/192.168.2.7
+    address=/level3.blizzard.com/192.168.2.7
+
+    address=/l3cdn.riotgames.com/192.168.2.7
+
+    address=/origin-a.akamaihd.net/192.168.2.7
+    address=/akamai.cdn.ea.com/192.168.2.7
+    address=/lvlt.cdn.ea.com/192.168.2.7
+
+    address=/dl.wargaming.net/192.168.2.7
+    address=/dl2.wargaming.net/192.168.2.7
+    address=/wg.gcdn.co/192.168.2.7
+
+    address=/archive.ubuntu.com/192.168.2.7
+    address=/extras.ubuntu.com/192.168.2.7
+    address=/security.ubuntu.com/192.168.2.7
+    address=/us.archive.ubuntu.com/192.168.2.7
+
+    address=/pypi.python.org/192.168.2.7
+
+
+
+    address=/openhab.chocobo/192.168.2.130
+
+
+    address=/git.gud/192.168.2.6
+    address=/drone.gud/192.168.2.6
+    address=/docker.gud/192.168.2.6
+    address=/kubernetes.gud/192.168.2.5
+
+    address=/transmission.gud/192.168.2.6
+    address=/sabnzbd.gud/192.168.2.6
+    address=/couchpotato.gud/192.168.2.6
+    address=/sickrage.gud/192.168.2.6
+    address=/media.gud/192.168.2.6
+kind: ConfigMap
+metadata:
+  creationTimestamp: 2018-01-27T15:52:28Z
+  name: pihole-dnsmasq
+  namespace: default
+  resourceVersion: "407519"
+  selfLink: /api/v1/namespaces/default/configmaps/pihole-dnsmasq
+  uid: 1377164f-037a-11e8-a448-74d02b334d5d

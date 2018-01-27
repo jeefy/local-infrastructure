@@ -1,0 +1,13 @@
+apiVersion: v1
+data:
+  local.list: |
+    192.168.2.130 pihole-59964fc479-ppz2l
+    192.168.2.130 pi.hole
+kind: ConfigMap
+metadata:
+  creationTimestamp: 2018-01-27T15:20:37Z
+  name: pihole-local-list
+  namespace: default
+  resourceVersion: "404048"
+  selfLink: /api/v1/namespaces/default/configmaps/pihole-local-list
+  uid: a083503f-0375-11e8-a448-74d02b334d5d

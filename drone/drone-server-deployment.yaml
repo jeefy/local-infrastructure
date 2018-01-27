@@ -1,0 +1,48 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  annotations:
+    kompose.cmd: kompose convert -f docker-compose.yml
+    kompose.version: 1.7.0 (767ab4b)
+  creationTimestamp: null
+  labels:
+    io.kompose.service: drone-server
+  name: drone-server
+spec:
+  replicas: 1
+  strategy:
+    type: Recreate
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        io.kompose.service: drone-server
+    spec:
+      containers:
+      - env:
+        - name: DRONE_GOGS
+          value: "true"
+        - name: DRONE_GOGS_SECRET
+          value: aa04b8e188a0ea6a2d4a636c653babf11b2c2ed3
+        - name: DRONE_GOGS_URL
+          value: http://gogs-web:8023
+        - name: DRONE_HOST
+          value: localhost
+        - name: DRONE_OPEN
+          value: "true"
+        image: drone/drone:0.8.2
+        name: drone-server
+        ports:
+        - containerPort: 8000
+        - containerPort: 9000
+        resources: {}
+        volumeMounts:
+        - mountPath: /var/lib/drone/
+          name: nfs-data
+          subPath: drone
+      restartPolicy: Always
+      volumes:
+      - name: nfs-data
+        persistentVolumeClaim:
+          claimName: nfs-data
+status: {}
