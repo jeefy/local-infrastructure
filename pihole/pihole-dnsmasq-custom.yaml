@@ -107,7 +107,7 @@ data:
     address=/sabnzbd.gud/192.168.2.6
     address=/couchpotato.gud/192.168.2.6
     address=/sickrage.gud/192.168.2.6
-    address=/media.gud/192.168.2.6
+    address=/media.gud/192.168.2.130
 kind: ConfigMap
 metadata:
   creationTimestamp: 2018-01-27T15:52:28Z

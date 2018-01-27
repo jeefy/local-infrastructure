@@ -14,8 +14,6 @@ spec:
     - transmission.gud
     - couchpotato.gud
     - sickrage.gud
-    - media.gud
-    - pi.hole
   rules:
   - host: sabnzbd.gud
     http:
@@ -44,13 +42,6 @@ spec:
       - backend:
           serviceName: sickrage
           servicePort: 8081
-        path: /
-  - host: media.gud
-    http:
-      paths:
-      - backend:
-          serviceName: emby
-          servicePort: 8096
         path: /
   - host: git.gud
     http:
