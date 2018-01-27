@@ -1,0 +1,38 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  annotations:
+    kompose.cmd: kompose convert -f docker-compose.yml
+    kompose.version: 1.7.0 (767ab4b)
+  creationTimestamp: null
+  labels:
+    io.kompose.service: drone-agent
+  name: drone-agent
+spec:
+  replicas: 1
+  strategy:
+    type: Recreate
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        io.kompose.service: drone-agent
+    spec:
+      containers:
+      - args:
+        - agent
+        env:
+        - name: DRONE_SERVER
+          value: $(DRONE_SERVER_SERVICE_HOST):$(DRONE_SERVER_SERVICE_PORT_9000)
+        image: drone/agent:0.8
+        name: drone-agent
+        resources: {}
+        volumeMounts:
+        - mountPath: /var/run/docker.sock
+          name: docker-socket
+      restartPolicy: Always
+      volumes:
+        - name: docker-socket
+          hostPath:
+            path: /var/run/docker.sock 
+status: {}

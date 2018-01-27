@@ -1,0 +1,48 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  annotations:
+    kompose.cmd: kompose convert -f docker-compose.yml
+    kompose.version: 1.7.0 (767ab4b)
+  creationTimestamp: null
+  labels:
+    io.kompose.service: couchpotato
+  name: couchpotato
+spec:
+  replicas: 1
+  strategy:
+    type: Recreate
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        io.kompose.service: couchpotato
+    spec:
+      containers:
+      - env:
+        - name: VIRTUAL_HOST
+          value: movies.chocobo
+        image: linuxserver/couchpotato
+        name: couchpotato
+        ports:
+        - containerPort: 5050
+        resources: {}
+        volumeMounts:
+        - mountPath: /config
+          name: nfs-data
+          subPath: couchpotato
+        - mountPath: /movies
+          name: nfs-archives
+          subPath: Movies
+        - mountPath: /downloads
+          name: nfs-archives
+          subPath: Incoming
+      restartPolicy: Always
+      volumes:
+      - name: nfs-data
+        persistentVolumeClaim:
+          claimName: nfs-data
+      - name: nfs-archives
+        persistentVolumeClaim:
+          claimName: nfs-archives
+status: {}

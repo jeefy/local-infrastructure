@@ -1,0 +1,21 @@
+apiVersion: v1
+kind: Service
+metadata:
+  annotations:
+    kompose.cmd: kompose convert -f docker-compose.yml
+    kompose.version: 1.7.0 (767ab4b)
+  creationTimestamp: null
+  labels:
+    io.kompose.service: gogs
+  name: gogs-ssh
+spec:
+  type: LoadBalancer
+  loadBalancerIP: 192.168.2.6
+  ports:
+  - name: git-ssh
+    port: 8022
+    targetPort: 22
+  selector:
+    io.kompose.service: gogs
+status:
+  loadBalancer: {}

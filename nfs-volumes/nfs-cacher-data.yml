@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: nfs-cacher-data
+  annotations:
+    volume.beta.kubernetes.io/mount-options: vers=4
+spec:
+  capacity:
+    storage: 50Gi 
+  accessModes:
+    - ReadWriteMany
+  nfs:
+    server: 192.168.2.130
+    path: "/data/lan-cacher"

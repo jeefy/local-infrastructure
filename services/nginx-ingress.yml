@@ -1,0 +1,68 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  annotations:
+    nginx.ingress.kubernetes.io/proxy-body-size: "0"
+    nginx.ingress.kubernetes.io/proxy-read-timeout: "600"
+    nginx.ingress.kubernetes.io/proxy-send-timeout: "600"
+  name: kubernetes-ingress
+  namespace: default
+spec:
+  tls:
+  - hosts:
+    - sabnzbd.gud 
+    - transmission.gud
+    - couchpotato.gud
+    - sickrage.gud
+    - media.gud
+    - pi.hole
+  rules:
+  - host: sabnzbd.gud
+    http:
+      paths:
+      - backend:
+          serviceName: sabnzbd
+          servicePort: 8080
+        path: /
+  - host: transmission.gud
+    http:
+      paths:
+      - backend:
+          serviceName: transmission
+          servicePort: 9091
+        path: /
+  - host: couchpotato.gud
+    http:
+      paths:
+      - backend:
+          serviceName: couchpotato
+          servicePort: 5050
+        path: /
+  - host: sickrage.gud
+    http:
+      paths:
+      - backend:
+          serviceName: sickrage
+          servicePort: 8081
+        path: /
+  - host: media.gud
+    http:
+      paths:
+      - backend:
+          serviceName: emby
+          servicePort: 8096
+        path: /
+  - host: git.gud
+    http:
+      paths:
+      - backend:
+          serviceName: gogs-web
+          servicePort: 8023
+        path: /
+  - host: drone.gud
+    http:
+      paths:
+      - backend:
+          serviceName: drone-server
+          servicePort: 8024
+        path: /
