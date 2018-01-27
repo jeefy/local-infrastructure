@@ -9,3 +9,6 @@ spec:
   resources:
     requests:
       storage: 50Gi
+  selector: 
+    matchLabels: 
+      name: nfs-cacher-data

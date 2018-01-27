@@ -4,6 +4,8 @@ metadata:
   name: nfs-cacher-data
   annotations:
     volume.beta.kubernetes.io/mount-options: vers=4
+  labels:
+    name: nfs-cacher-data
 spec:
   capacity:
     storage: 50Gi 

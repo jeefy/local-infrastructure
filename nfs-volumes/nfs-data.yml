@@ -4,6 +4,8 @@ metadata:
   name: nfs-data
   annotations:
     volume.beta.kubernetes.io/mount-options: vers=4
+  labels:
+    name: nfs-data
 spec:
   capacity:
     storage: 50Gi 
