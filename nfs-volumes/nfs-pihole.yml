@@ -4,6 +4,8 @@ metadata:
   name: nfs-pihole
   annotations:
     volume.beta.kubernetes.io/mount-options: vers=4
+  labels:
+    name: nfs-pihole
 spec:
   capacity:
     storage: 50Gi 
