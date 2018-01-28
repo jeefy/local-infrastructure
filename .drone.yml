@@ -6,3 +6,8 @@ pipeline:
     commands:
       - kubectl get pods
       - ./apply.sh
+services:
+  docker:
+    image: docker:dind
+    command: [ "--storage-driver=vfs", "--tls=false" ]
+    privileged: true
