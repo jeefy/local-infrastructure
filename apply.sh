@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# Assuming this is being run in the correct directory
+# Assume this is being run in the correct directory
 
 find . -type f -name \*.yaml -print0 | while read -d $'\0' file
 do
