@@ -9,4 +9,4 @@ pipeline:
       - kubectl get pods
       - pwd
       - ls -la
-      - apply.sh
+      - /bin/bash apply.sh
