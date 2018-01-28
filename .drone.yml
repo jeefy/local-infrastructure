@@ -1,0 +1,8 @@
+pipeline:
+  apply:
+    volumes:
+      - /home/jeefy/.kube/config:/root/.kube/config
+    image: lachlanevenson/k8s-kubectl:v1.9.2
+    commands:
+      - kubectl get pods
+      - ./apply.sh
