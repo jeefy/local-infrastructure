@@ -3,9 +3,9 @@ pipeline:
     privileged: true
     volumes:
       - /home/jeefy/.kube/config:/root/.kube/config
-    image: lachlanevenson/k8s-kubectl:v1.9.2
+    image: roffe/kubectl:v1.9.1
     commands:
       - kubectl get pods
       - pwd
-      - ls
+      - ls -la
       - ./apply.sh
