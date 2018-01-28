@@ -4,6 +4,7 @@ pipeline:
     volumes:
       - /home/jeefy/.kube/config:/root/.kube/config
     image: roffe/kubectl:v1.9.1
+    pull: true
     commands:
       - kubectl get pods
       - pwd
