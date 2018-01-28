@@ -20,6 +20,8 @@ spec:
     spec:
       containers:
       - env:
+        - name: DRONE_ADMIN
+          value: "jeefy"
         - name: DRONE_GOGS
           value: "true"
         - name: DRONE_GOGS_SECRET
