@@ -13,7 +13,7 @@ spec:
   loadBalancerIP: 192.168.2.6
   ports:
   - name: git-ssh
-    port: 8022
+    port: 22
     targetPort: 22
   selector:
     io.kompose.service: gogs
