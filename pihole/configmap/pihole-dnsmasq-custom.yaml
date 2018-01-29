@@ -103,6 +103,11 @@ data:
     address=/docker.gud/192.168.2.6
     address=/kubernetes.gud/192.168.2.5
 
+    address=/prometheus.gud/192.168.2.6
+    address=/alertmanager.gud/192.168.2.6
+    address=/pushgateway.gud/192.168.2.6
+
+
     address=/transmission.gud/192.168.2.6
     address=/sabnzbd.gud/192.168.2.6
     address=/couchpotato.gud/192.168.2.6
