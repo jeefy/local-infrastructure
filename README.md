@@ -1,8 +1,11 @@
 ## Fat Chocobo
 
-helm install --name=monitoring stable/prometheus \
-  --set rbac.create=true \
-  --set server.persistentVolume.size=50Gi
+helm repo add coreos https://s3-eu-west-1.amazonaws.com/coreos-charts/stable/
+helm install coreos/prometheus-operator
+git clone https://github.com/coreos/prometheus-operator.git
+cd contrib/kube-prometheus
+hack/cluster-monitoring/deploy
 
-  helm install --name=grafana stable/grafana \
-    --set server.persistentVolume.existingClaim=nfs-archives-grafana
+
+
+Grafana creds for now: admin / FVM62SgS4Z

@@ -100,10 +100,9 @@ data:
     address=/docker.gud/192.168.2.6
     address=/kubernetes.gud/192.168.2.5
 
-    address=/prometheus.gud/192.168.2.6
-    address=/alertmanager.gud/192.168.2.6
-    address=/pushgateway.gud/192.168.2.6
-    address=/grafana.gud/192.168.2.6
+    address=/prometheus.gud/192.168.2.4
+    address=/alertmanager.gud/192.168.2.4
+    address=/grafana.gud/192.168.2.4
 
 
     address=/transmission.gud/192.168.2.6
