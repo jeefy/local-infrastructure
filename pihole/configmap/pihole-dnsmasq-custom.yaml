@@ -93,10 +93,7 @@ data:
 
     address=/pypi.python.org/192.168.2.7
 
-
-
     address=/openhab.chocobo/192.168.2.130
-
 
     address=/git.gud/192.168.2.6
     address=/drone.gud/192.168.2.6
@@ -106,6 +103,7 @@ data:
     address=/prometheus.gud/192.168.2.6
     address=/alertmanager.gud/192.168.2.6
     address=/pushgateway.gud/192.168.2.6
+    address=/grafana.gud/192.168.2.6
 
 
     address=/transmission.gud/192.168.2.6
