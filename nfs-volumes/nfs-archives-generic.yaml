@@ -11,6 +11,7 @@ spec:
     storage: 1Ti
   accessModes:
     - ReadWriteMany
+    - ReadWriteOnce
   nfs:
     server: 192.168.2.130
     path: "/archives/Services"
