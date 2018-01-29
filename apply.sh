@@ -20,3 +20,6 @@ do
     fi
   fi
 done
+
+# Update pihole
+kubectl delete "po/$(kubectl get pods | awk '/pihole/ {print $1}')"
