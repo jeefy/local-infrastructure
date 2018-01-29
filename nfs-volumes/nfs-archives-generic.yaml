@@ -5,7 +5,7 @@ metadata:
   annotations:
     volume.beta.kubernetes.io/mount-options: vers=4
   labels:
-    name: nfs-archives
+    name: nfs-archives-generic
 spec:
   capacity:
     storage: 1Ti
