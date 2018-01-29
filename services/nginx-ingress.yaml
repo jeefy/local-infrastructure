@@ -83,3 +83,10 @@ spec:
           serviceName: monitoring-prometheus-pushgateway
           servicePort: 9091
         path: /
+  - host: grafana.gud
+    http:
+      paths:
+      - backend:
+          serviceName: grafana-grafana
+          servicePort: 80
+        path: /
