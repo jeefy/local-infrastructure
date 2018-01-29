@@ -8,17 +8,17 @@ metadata:
   name: kubernetes-ingress
   namespace: default
 spec:
-  tls:
-  - hosts:
-    - sabnzbd.gud
-    - transmission.gud
-    - couchpotato.gud
-    - sickrage.gud
-    - git.gud
-    - drone.gud
-    - prometheus.gud
-    - alertmanager.gud
-    - pushgateway.gud
+#  tls:
+#  - hosts:
+#    - sabnzbd.gud
+#    - transmission.gud
+#    - couchpotato.gud
+#    - sickrage.gud
+#    - git.gud
+#    - drone.gud
+#    - prometheus.gud
+#    - alertmanager.gud
+#    - pushgateway.gud
   rules:
   - host: sabnzbd.gud
     http:
