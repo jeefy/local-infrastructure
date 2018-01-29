@@ -6,7 +6,7 @@ metadata:
     nginx.ingress.kubernetes.io/proxy-read-timeout: "600"
     nginx.ingress.kubernetes.io/proxy-send-timeout: "600"
   name: kubernetes-ingress
-  namespace: default
+  namespace: monitoring
 spec:
   rules:
     - host: prometheus.gud
