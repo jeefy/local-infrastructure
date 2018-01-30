@@ -9,7 +9,7 @@ metadata:
     io.kompose.service: lan-cacher
   name: lan-cacher
 spec:
-  loadBalancerIP: 192.168.2.7
+  loadBalancerIP: 192.168.2.8
   type: LoadBalancer
   ports:
   - name: "80"

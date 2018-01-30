@@ -1,7 +1,7 @@
 apiVersion: v1
 data:
   setupVars.conf: |
-    IPV4_ADDRESS=192.168.2.130
+    IPV4_ADDRESS=192.168.2.15
     IPV6_ADDRESS=
     WEBPASSWORD=4ca12137cb06f45dcb94ff6ecf659038945af016f9344233324f1c4a3fa6f39c
     PIHOLE_DNS_1=8.8.8.8

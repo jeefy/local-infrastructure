@@ -1,0 +1,32 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  annotations:
+    nginx.ingress.kubernetes.io/proxy-body-size: "0"
+    nginx.ingress.kubernetes.io/proxy-read-timeout: "600"
+    nginx.ingress.kubernetes.io/proxy-send-timeout: "600"
+  name: kubernetes-ingress-monitoring
+  namespace: monitoring
+spec:
+  rules:
+    - host: prometheus.gud
+      http:
+        paths:
+        - backend:
+            serviceName: prometheus-k8s
+            servicePort: 9090
+          path: /
+    - host: alertmanager.gud
+      http:
+        paths:
+        - backend:
+            serviceName: alertmanager-main
+            servicePort: 9093
+          path: /
+    - host: grafana.gud
+      http:
+        paths:
+        - backend:
+            serviceName: grafana
+            servicePort: 3000
+          path: /

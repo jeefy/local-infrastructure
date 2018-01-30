@@ -5,20 +5,9 @@ metadata:
     nginx.ingress.kubernetes.io/proxy-body-size: "0"
     nginx.ingress.kubernetes.io/proxy-read-timeout: "600"
     nginx.ingress.kubernetes.io/proxy-send-timeout: "600"
-  name: kubernetes-ingress
+  name: kubernetes-ingress-default
   namespace: default
 spec:
-#  tls:
-#  - hosts:
-#    - sabnzbd.gud
-#    - transmission.gud
-#    - couchpotato.gud
-#    - sickrage.gud
-#    - git.gud
-#    - drone.gud
-#    - prometheus.gud
-#    - alertmanager.gud
-#    - pushgateway.gud
   rules:
   - host: sabnzbd.gud
     http:
@@ -61,25 +50,4 @@ spec:
       - backend:
           serviceName: drone-server
           servicePort: 8024
-        path: /
-  - host: prometheus.gud
-    http:
-      paths:
-      - backend:
-          serviceName: monitoring-prometheus-server
-          servicePort: 80
-        path: /
-  - host: alertmanager.gud
-    http:
-      paths:
-      - backend:
-          serviceName: monitoring-prometheus-alertmanager
-          servicePort: 80
-        path: /
-  - host: pushgateway.gud
-    http:
-      paths:
-      - backend:
-          serviceName: monitoring-prometheus-pushgateway
-          servicePort: 9091
         path: /

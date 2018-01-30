@@ -10,7 +10,7 @@ metadata:
   name: emby-external-tcp
 spec:
   type: LoadBalancer
-  loadBalancerIP: 192.168.2.130
+  loadBalancerIP: 192.168.2.15
   ports:
   - name: "8096"
     port: 8096
