@@ -9,7 +9,7 @@ metadata:
     io.kompose.service: pihole
   name: pihole-dns-udp
 spec:
-  loadBalancerIP: 192.168.2.130
+  loadBalancerIP: 192.168.2.15
   ports:
   - name: dns
     port: 53

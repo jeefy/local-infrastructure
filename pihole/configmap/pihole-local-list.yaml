@@ -1,8 +1,8 @@
 apiVersion: v1
 data:
   local.list: |
-    192.168.2.130 pihole-59964fc479-ppz2l
-    192.168.2.130 pi.hole
+    192.168.2.15 pihole-59964fc479-ppz2l
+    192.168.2.15 pi.hole
 kind: ConfigMap
 metadata:
   creationTimestamp: 2018-01-27T15:20:37Z

@@ -47,72 +47,73 @@ data:
     server=8.8.4.4
     interface=eth0
   02-gridania.conf: |
-    address=/content1.steampowered.com/192.168.2.7
-    address=/content2.steampowered.com/192.168.2.7
-    address=/content3.steampowered.com/192.168.2.7
-    address=/content4.steampowered.com/192.168.2.7
-    address=/content5.steampowered.com/192.168.2.7
-    address=/content6.steampowered.com/192.168.2.7
-    address=/content7.steampowered.com/192.168.2.7
-    address=/content8.steampowered.com/192.168.2.7
-    address=/content9.steampowered.com/192.168.2.7
-    address=/content0.steampowered.com/192.168.2.7
-    address=/cs.steampowered.com/192.168.2.7
-    address=/steamcontent.com/192.168.2.7
-    address=/client-download.steampowered.com/192.168.2.7
-    address=/.hsar.steampowered.com.edgesuite.net/192.168.2.7
-    address=/.akamai.steamstatic.com/192.168.2.7
-    address=/content-origin.steampowered.com/192.168.2.7
+    address=/content1.steampowered.com/192.168.2.8
+    address=/content2.steampowered.com/192.168.2.8
+    address=/content3.steampowered.com/192.168.2.8
+    address=/content4.steampowered.com/192.168.2.8
+    address=/content5.steampowered.com/192.168.2.8
+    address=/content6.steampowered.com/192.168.2.8
+    address=/content7.steampowered.com/192.168.2.8
+    address=/content8.steampowered.com/192.168.2.8
+    address=/content9.steampowered.com/192.168.2.8
+    address=/content0.steampowered.com/192.168.2.8
+    address=/cs.steampowered.com/192.168.2.8
+    address=/steamcontent.com/192.168.2.8
+    address=/client-download.steampowered.com/192.168.2.8
+    address=/.hsar.steampowered.com.edgesuite.net/192.168.2.8
+    address=/.akamai.steamstatic.com/192.168.2.8
+    address=/content-origin.steampowered.com/192.168.2.8
 
 
 
-    address=/dist.blizzard.com.edgesuite.net/192.168.2.7
-    address=/llnw.blizzard.com/192.168.2.7
-    address=/dist.blizzard.com/192.168.2.7
-    address=/blizzard.vo.llnwd.net/192.168.2.7
-    address=/blzddist1-a.akamaihd.net/192.168.2.7
-    address=/blzddist2-a.akamaihd.net/192.168.2.7
-    address=/blzddist3-a.akamaihd.net/192.168.2.7
-    address=/blzddist1-a.akamaihd.net/192.168.2.7
-    address=/level3.blizzard.com/192.168.2.7
+    address=/dist.blizzard.com.edgesuite.net/192.168.2.8
+    address=/llnw.blizzard.com/192.168.2.8
+    address=/dist.blizzard.com/192.168.2.8
+    address=/blizzard.vo.llnwd.net/192.168.2.8
+    address=/blzddist1-a.akamaihd.net/192.168.2.8
+    address=/blzddist2-a.akamaihd.net/192.168.2.8
+    address=/blzddist3-a.akamaihd.net/192.168.2.8
+    address=/blzddist1-a.akamaihd.net/192.168.2.8
+    address=/level3.blizzard.com/192.168.2.8
 
-    address=/l3cdn.riotgames.com/192.168.2.7
+    address=/l3cdn.riotgames.com/192.168.2.8
 
-    address=/origin-a.akamaihd.net/192.168.2.7
-    address=/akamai.cdn.ea.com/192.168.2.7
-    address=/lvlt.cdn.ea.com/192.168.2.7
+    address=/origin-a.akamaihd.net/192.168.2.8
+    address=/akamai.cdn.ea.com/192.168.2.8
+    address=/lvlt.cdn.ea.com/192.168.2.8
 
-    address=/dl.wargaming.net/192.168.2.7
-    address=/dl2.wargaming.net/192.168.2.7
-    address=/wg.gcdn.co/192.168.2.7
+    address=/dl.wargaming.net/192.168.2.8
+    address=/dl2.wargaming.net/192.168.2.8
+    address=/wg.gcdn.co/192.168.2.8
 
-    address=/archive.ubuntu.com/192.168.2.7
-    address=/extras.ubuntu.com/192.168.2.7
-    address=/security.ubuntu.com/192.168.2.7
-    address=/us.archive.ubuntu.com/192.168.2.7
+    address=/archive.ubuntu.com/192.168.2.8
+    address=/extras.ubuntu.com/192.168.2.8
+    address=/security.ubuntu.com/192.168.2.8
+    address=/us.archive.ubuntu.com/192.168.2.8
 
-    address=/pypi.python.org/192.168.2.7
-
-
-
-    address=/openhab.chocobo/192.168.2.130
+    address=/pypi.python.org/192.168.2.8
 
 
-    address=/git.gud/192.168.2.6
-    address=/drone.gud/192.168.2.6
-    address=/docker.gud/192.168.2.6
-    address=/kubernetes.gud/192.168.2.5
 
-    address=/prometheus.gud/192.168.2.6
-    address=/alertmanager.gud/192.168.2.6
-    address=/pushgateway.gud/192.168.2.6
+    address=/openhab.chocobo/192.168.2.15
 
 
-    address=/transmission.gud/192.168.2.6
-    address=/sabnzbd.gud/192.168.2.6
-    address=/couchpotato.gud/192.168.2.6
-    address=/sickrage.gud/192.168.2.6
-    address=/media.gud/192.168.2.130
+    address=/git.gud/192.168.2.9
+    address=/drone.gud/192.168.2.9
+    address=/docker.gud/192.168.2.9
+    address=/kubernetes.gud/192.168.2.10
+
+    address=/prometheus.gud/192.168.2.11
+    address=/grafana.gud/192.168.2.11
+    address=/alertmanager.gud/192.168.2.11
+    address=/pushgateway.gud/192.168.2.11
+
+
+    address=/transmission.gud/192.168.2.9
+    address=/sabnzbd.gud/192.168.2.9
+    address=/couchpotato.gud/192.168.2.9
+    address=/sickrage.gud/192.168.2.9
+    address=/media.gud/192.168.2.15
 kind: ConfigMap
 metadata:
   creationTimestamp: 2018-01-27T15:52:28Z

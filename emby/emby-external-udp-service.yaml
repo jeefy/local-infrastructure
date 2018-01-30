@@ -10,7 +10,7 @@ metadata:
   name: emby-external-udp
 spec:
   type: LoadBalancer
-  loadBalancerIP: 192.168.2.130
+  loadBalancerIP: 192.168.2.15
   ports:
   - name: "7359"
     port: 7359

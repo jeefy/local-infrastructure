@@ -3,6 +3,7 @@ apiVersion: apps/v1beta2
 kind: DaemonSet
 metadata:
   name: kube-keepalived-vip
+  namespace: kube-system
 spec:
   selector:
     matchLabels:
@@ -20,7 +21,7 @@ spec:
       containers:
         - image: aledbf/kube-keepalived-vip:0.25 
           name: keepalived-vip
-          imagePullPolicy: Always
+          imagePullPolicy: IfNotPresent
           securityContext:
             privileged: true
           volumeMounts:

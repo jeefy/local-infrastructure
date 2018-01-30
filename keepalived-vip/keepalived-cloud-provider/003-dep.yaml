@@ -33,7 +33,7 @@ spec:
         - name: KEEPALIVED_CONFIG_MAP
           value: vip-configmap
         - name: KEEPALIVED_SERVICE_CIDR
-          value: "192.168.2.4/30"
+          value: "192.168.2.8/29"
         volumeMounts:
         - name: certs
           mountPath: /etc/ssl/certs
