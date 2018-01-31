@@ -93,8 +93,6 @@ data:
 
     address=/pypi.python.org/192.168.2.8
 
-
-
     address=/openhab.chocobo/192.168.2.15
 
 
@@ -107,7 +105,6 @@ data:
     address=/grafana.gud/192.168.2.11
     address=/alertmanager.gud/192.168.2.11
     address=/pushgateway.gud/192.168.2.11
-
 
     address=/transmission.gud/192.168.2.9
     address=/sabnzbd.gud/192.168.2.9
