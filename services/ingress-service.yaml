@@ -16,4 +16,4 @@ spec:
     targetPort: 443
     protocol: TCP
   selector:
-    app: ingress-nginx-default
+    app: ingress-nginx
