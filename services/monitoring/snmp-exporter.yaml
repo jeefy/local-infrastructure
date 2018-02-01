@@ -1,0 +1,89 @@
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    app: snmpexporter
+    k8s-app: snmpexporter
+  name: snmpexporter
+  namespace: monitoring
+spec:
+  ports:
+  - name: probe
+    port: 9190
+    protocol: TCP
+    targetPort: 9190
+  selector:
+    app: snmpexporter
+  type: ClusterIP
+---
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  labels:
+    app: snmpexporter
+  name: snmpexporter
+  namespace: monitoring
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: snmpexporter
+  strategy:
+    rollingUpdate:
+      maxSurge: 3
+      maxUnavailable: 1
+    type: RollingUpdate
+  template:
+    metadata:
+      labels:
+        app: snmpexporter
+      name: snmpexporter
+    spec:
+      containers:
+      - image: quay.io/dhtech/snmpexporter
+        imagePullPolicy: Always
+        name: snmpexporter
+        volumeMounts:
+          - name: config-volume
+            mountPath: /etc/snmpexporter
+        resources:
+              requests:
+                memory: "300Mi"
+              limits:
+                memory: "400Mi"
+        livenessProbe:
+          httpGet:
+            path: /healthy
+            port: 9190
+          initialDelaySeconds: 15
+          timeoutSeconds: 30
+      restartPolicy: Always
+      terminationGracePeriodSeconds: 30
+      volumes:
+        - name: config-volume
+          configMap:
+            name: snmpexporter
+---
+apiVersion: monitoring.coreos.com/v1
+kind: ServiceMonitor
+metadata:
+  name: snmpexporter
+  labels:
+    k8s-app: snmpexporter
+spec:
+  jobLabel: k8s-app
+  endpoints:
+  - port: snmpexporter
+    interval: 10s
+    params:
+      module:
+        - http_2xx
+      target:
+        - 192.168.2.1:161
+    targetPort: 9190
+  selector:
+    matchLabels:
+      k8s-app: snmpexporter
+  namespaceSelector:
+    matchNames:
+    - monitoring
