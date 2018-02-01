@@ -101,10 +101,10 @@ data:
     address=/docker.gud/192.168.2.9
     address=/kubernetes.gud/192.168.2.10
 
-    address=/prometheus.gud/192.168.2.11
-    address=/grafana.gud/192.168.2.11
-    address=/alertmanager.gud/192.168.2.11
-    address=/pushgateway.gud/192.168.2.11
+    address=/prometheus.gud/192.168.2.9
+    address=/grafana.gud/192.168.2.9
+    address=/alertmanager.gud/192.168.2.9
+    address=/pushgateway.gud/192.168.2.9
 
     address=/transmission.gud/192.168.2.9
     address=/sabnzbd.gud/192.168.2.9
