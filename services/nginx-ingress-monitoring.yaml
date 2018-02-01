@@ -9,24 +9,24 @@ metadata:
   namespace: monitoring
 spec:
   rules:
-    - host: prometheus.gud
-      http:
-        paths:
-        - backend:
-            serviceName: prometheus-k8s
-            servicePort: 9090
-          path: /
-    - host: alertmanager.gud
-      http:
-        paths:
-        - backend:
-            serviceName: alertmanager-main
-            servicePort: 9093
-          path: /
-    - host: grafana.gud
-      http:
-        paths:
-        - backend:
-            serviceName: grafana
-            servicePort: 3000
-          path: /
+  - host: prometheus.gud
+    http:
+      paths:
+      - backend:
+          serviceName: prometheus-k8s
+          servicePort: 9090
+        path: /
+  - host: alertmanager.gud
+    http:
+      paths:
+      - backend:
+          serviceName: alertmanager-main
+          servicePort: 9093
+        path: /
+  - host: grafana.gud
+    http:
+      paths:
+      - backend:
+          serviceName: grafana
+          servicePort: 3000
+        path: /
