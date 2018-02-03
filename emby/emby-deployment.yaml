@@ -26,7 +26,7 @@ spec:
           value: media.chocobo
         - name: VIRTUAL_PORT
           value: "8096"
-        image: dperson/emby:latest
+        image: emby/embyserver:latest
         name: emby
         ports:
         - containerPort: 8096
