@@ -67,6 +67,7 @@ spec:
 apiVersion: monitoring.coreos.com/v1
 kind: ServiceMonitor
 metadata:
+  namespace: monitoring
   name: snmpexporter
   labels:
     k8s-app: snmpexporter
@@ -77,9 +78,9 @@ spec:
     interval: 20s
     params:
       module:
-        - http_2xx
+        - ddwrt
       target:
-        - 192.168.2.1:161
+        - 192.168.2.1
     targetPort: 9116
   selector:
     matchLabels:
