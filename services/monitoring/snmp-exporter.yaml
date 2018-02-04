@@ -9,9 +9,9 @@ metadata:
 spec:
   ports:
   - name: probe
-    port: 9190
+    port: 9116
     protocol: TCP
-    targetPort: 9190
+    targetPort: 9116
   selector:
     app: snmpexporter
   type: ClusterIP
@@ -40,12 +40,12 @@ spec:
       name: snmpexporter
     spec:
       containers:
-      - image: quay.io/dhtech/snmpexporter
+      - image: oakman/snmp-exporter
         imagePullPolicy: Always
         name: snmpexporter
         volumeMounts:
           - name: config-volume
-            mountPath: /etc/snmpexporter
+            mountPath: /config
         resources:
               requests:
                 memory: "300Mi"
@@ -54,7 +54,7 @@ spec:
         livenessProbe:
           httpGet:
             path: /healthy
-            port: 9190
+            port: 9116
           initialDelaySeconds: 15
           timeoutSeconds: 30
       restartPolicy: Always
@@ -80,7 +80,7 @@ spec:
         - http_2xx
       target:
         - 192.168.2.1:161
-    targetPort: 9190
+    targetPort: 9116
   selector:
     matchLabels:
       k8s-app: snmpexporter
