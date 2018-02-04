@@ -40,7 +40,7 @@ spec:
       name: snmpexporter
     spec:
       containers:
-      - image: oakman/snmp-exporter
+      - image: prom/snmp-exporter:v0.8.0
         imagePullPolicy: Always
         name: snmpexporter
         volumeMounts:
