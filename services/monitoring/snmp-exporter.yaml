@@ -24,13 +24,13 @@ metadata:
   name: snmpexporter
   namespace: monitoring
 spec:
-  replicas: 2
+  replicas: 1
   selector:
     matchLabels:
       app: snmpexporter
   strategy:
     rollingUpdate:
-      maxSurge: 3
+      maxSurge: 2
       maxUnavailable: 1
     type: RollingUpdate
   template:
