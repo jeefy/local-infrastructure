@@ -74,7 +74,7 @@ spec:
   jobLabel: k8s-app
   endpoints:
   - port: snmpexporter
-    interval: 10s
+    interval: 20s
     params:
       module:
         - http_2xx
