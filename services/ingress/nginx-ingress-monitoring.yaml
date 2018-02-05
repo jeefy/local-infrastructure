@@ -6,27 +6,27 @@ metadata:
     nginx.ingress.kubernetes.io/proxy-read-timeout: "600"
     nginx.ingress.kubernetes.io/proxy-send-timeout: "600"
   name: kubernetes-ingress-monitoring
-  namespace: monitoring
+  namespace: default
 spec:
   rules:
   - host: prometheus.gud
     http:
       paths:
       - backend:
-          serviceName: prometheus-k8s
-          servicePort: 9090
+          serviceName: monitoring-prometheus-server
+          servicePort: 80
         path: /
   - host: alertmanager.gud
     http:
       paths:
       - backend:
-          serviceName: alertmanager-main
-          servicePort: 9093
+          serviceName: monitoring-prometheus-alertmanager
+          servicePort: 80
         path: /
-  - host: grafana.gud
+  - host: pushgateway.gud
     http:
       paths:
       - backend:
-          serviceName: grafana
-          servicePort: 3000
+          serviceName: monitoring-prometheus-pushgateway
+          servicePort: 9091
         path: /
