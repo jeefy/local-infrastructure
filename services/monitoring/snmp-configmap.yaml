@@ -10213,4 +10213,4 @@ data:
 kind: ConfigMap
 metadata:
   name: snmpexporter
-  namespace: monitoring
+  namespace: default
