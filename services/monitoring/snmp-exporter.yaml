@@ -5,7 +5,7 @@ metadata:
     app: snmpexporter
     k8s-app: snmpexporter
   name: snmpexporter
-  namespace: monitoring
+  namespace: default
 spec:
   ports:
   - name: probe
@@ -22,7 +22,7 @@ metadata:
   labels:
     app: snmpexporter
   name: snmpexporter
-  namespace: monitoring
+  namespace: default
 spec:
   replicas: 1
   selector:
@@ -63,29 +63,3 @@ spec:
         - name: config-volume
           configMap:
             name: snmpexporter
----
-apiVersion: monitoring.coreos.com/v1
-kind: ServiceMonitor
-metadata:
-  namespace: monitoring
-  name: snmpexporter
-  labels:
-    k8s-app: snmpexporter
-spec:
-  jobLabel: k8s-app
-  endpoints:
-  - port: snmpexporter
-    interval: 20s
-    path: /snmp
-    params:
-      module:
-        - ddwrt
-      target:
-        - 192.168.2.1
-    targetPort: 9116
-  selector:
-    matchLabels:
-      k8s-app: snmpexporter
-  namespaceSelector:
-    matchNames:
-    - monitoring
