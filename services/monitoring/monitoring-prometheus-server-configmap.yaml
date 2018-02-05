@@ -12,6 +12,8 @@ data:
         - targets:
           - 192.168.2.1  # SNMP device.
       metrics_path: /snmp
+      scrape_interval: 10s
+      scrape_timeout: 5s
       params:
         module: [if_mib]
       relabel_configs:
