@@ -5,6 +5,7 @@ helm install -n monitoring stable/prometheus \
 
 helm install -n grafana stable/grafana \
 --set server.adminUser=admin \
---set server.adminPassword=password
+--set server.adminPassword=password \
+--set server.persistentVolume.existingClaim=nfs-archives-grafana
 
 Grafana creds for now: admin / password
