@@ -18,7 +18,7 @@ spec:
       labels:
         io.kompose.service: pihole
       annotations:
-        initializer.kubernetes.io/multiarch: {"arm":{"pihole":"diginc/pi-hole:arm_v3.1"}}
+        initializer.kubernetes.io/multiarch: '{"arm":{"pihole":"diginc/pi-hole:arm_v3.1"}}'
     spec:
       containers:
       - env:
