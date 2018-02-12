@@ -9,14 +9,16 @@ metadata:
     io.kompose.service: pihole
   name: pihole
 spec:
-  replicas: 1
+  replicas: 2
   strategy:
-    type: Recreate
+    type: RollingUpdate
   template:
     metadata:
       creationTimestamp: null
       labels:
         io.kompose.service: pihole
+      annotations:
+        initializer.kubernetes.io/multiarch: {"arm":{"pihole":"diginc/pi-hole:arm_v3.1"}}
     spec:
       containers:
       - env:
